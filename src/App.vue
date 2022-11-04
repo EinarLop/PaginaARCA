@@ -1,26 +1,36 @@
 <template>
   <div>
     <header>
+      <button v-on:click="navigateTo('products')">View Products</button>
       {{cart.length}} in cart
       <button v-on:click="navigateTo('cart')">View Cart</button>
     </header>
 
     <div v-if="page === 'cart'">
-      <h1> Carrito</h1>
+      <h1> Carritos </h1>
+      <div class="products">
+        <div v-for="product in cart" :key="product.name">
+        {{product.name}}
+        <img :src="product.image">
+        <div>{{product.cost}}</div>
+        <button v-on:click="addItemToCart"> Agregar a carrito</button>
+        </div>
+      </div>
     </div>
+  </div>
 
     <div v-if="page === 'products'">
       <h1> Productos </h1>
       <div class="products">
-      <div v-for="product in products" :key="product.name">
-       {{product.name}}
-       <img :src="product.image">
-       <div>{{product.cost}}</div>
-       <button v-on:click="addItemToCart"> Agregar a carrito</button>
+        <div v-for="product in products" :key="product.name">
+        {{product.name}}
+        <img :src="product.image">
+        <div>{{product.cost}}</div>
+        <button v-on:click="addItemToCart"> Agregar a carrito</button>
+        </div>
       </div>
     </div>
-    </div>
-  </div>
+  
 </template>
 
 <script>
@@ -56,8 +66,7 @@ export default{
 
     navigateTo(page){
       this.page = page;
-      //this.cart.push(product);
-      //this.page = 'cart';
+      this.cart.push(product);
     }
   },
   components :{}
