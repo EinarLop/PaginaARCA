@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>Your Cart</h1>
+      <h1>Tu Carrito</h1>
       <div class="products">
         <div v-for="(product, index) in cart" :key="index">
           <h3>{{product.name}}</h3>
@@ -23,6 +23,9 @@
   };
   </script>
   
-  <style>
-  </style>
-  
+<style>
+.products{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+</style>
