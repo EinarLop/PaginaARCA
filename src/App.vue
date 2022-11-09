@@ -7,15 +7,7 @@
     </header>
 
     <div v-if="page === 'cart'">
-      <h1> Carrito </h1>
-      <div class="products">
-        <div v-for="(product, index) in cart" :key="index">
-        {{product.name}}
-        <img :src="product.image">
-        <div>{{product.cost}}</div>
-        <button v-on:click="removeItemFromCart"> Quitar del carrito</button>
-        </div>
-      </div>
+      <Cart v-on:removeItemFromCart="removeItemFromCart" cart="cart"/>
     </div>
 
     <div v-if="page === 'products'">
@@ -27,6 +19,7 @@
 
 <script>
 import Products from './components/Products.vue'
+import Cart from './components/Cart.vue'
 
 export default{
   name: "App",
@@ -50,7 +43,7 @@ export default{
     }
   },
   components :{
-    Products
+    Products, Cart
   }
 };
 </script>
