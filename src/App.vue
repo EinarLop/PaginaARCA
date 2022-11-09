@@ -1,11 +1,17 @@
 <template>
   <div>
-    <a class="logo" href="https://www.coca-colaentuhogar.com/" title="Coca-Cola en tu Hogar" aria-label="store logo"><picture><source srcset="https://www.coca-colaentuhogar.com/static/version1666879807/frontend/FortyFour/mx-cceth/es_MX/images/logo.svg" media="(max-width: 767px)"><source srcset="https://www.coca-colaentuhogar.com/static/version1666879807/frontend/FortyFour/mx-cceth/es_MX/images/logo-cceth-stack.svg" media="(max-width: 1024px)"><img src="https://www.coca-colaentuhogar.com/static/version1666879807/frontend/FortyFour/mx-cceth/es_MX/images/logo.svg" title="Coca-Cola en tu Hogar" alt="Coca-Cola en tu Hogar" width="270" height="40"></picture></a>
     
     <header>
-      <button v-on:click="navigateTo('products')">Productos</button>
-      {{cart.length}} in cart
-      <button v-on:click="navigateTo('cart')">Carrito</button>
+      <img class="logo" src="https://www.coca-colaentuhogar.com/static/version1666879807/frontend/FortyFour/mx-cceth/es_MX/images/logo-cceth-stack.svg">
+      <nav>
+        <ul class="nav_links">
+          <li><a v-on:click="navigateTo('products')">Productos</a></li>
+          <li><a v-on:click="navigateTo('cart')">Mi Carrito</a></li>
+        </ul>
+      </nav>
+      
+      {{cart.length}} en tu carrito
+      
     </header>
 
     <div v-if="page === 'cart'">
@@ -45,11 +51,68 @@ export default {
 </script>
 
 <style>
-body {
-  color: #333;
-    font-family: 'TCCC-UnityText','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-style: normal;
-    font-weight: 400;
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+li, a, button{
+  font-family: 'TCCC-UnityText','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #edf0f1;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo{
+  cursor: pointer;
+}
+
+.nav_links{
+  list-style: none;
+}
+
+.nav_links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+  color: #0088a9;
+}
+
+button{
+  padding: 9px 25px;
+  background-color: rgba(0,136,169,1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover{
+  background-color: rgba(0,136,169,0.8);
+}
+
+.logo{
+  height: 50px;
+}
+/* body {
+    color: #333;
+    
     line-height: 1.42857143;
     font-size: 1.4rem;
 }
@@ -64,19 +127,5 @@ body {
   outline: none;
   border: none;
   cursor: pointer;
-}
-</style>
-
-<style>
-  .products{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-}
-body{
-  margin: 0;
-}
-header{
-  height: 100px;
-  text-align: right;
-}
+} */
 </style>

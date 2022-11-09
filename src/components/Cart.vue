@@ -6,7 +6,7 @@
           <h3>{{product.name}}</h3>
           <img :src="product.image" />
           <div>{{product.cost}}</div>
-          <button v-on:click="removeItemFromCart(product)">Remove from cart</button>
+          <button v-on:click="removeItemFromCart(product)">Quitar de carrito</button>
         </div>
       </div>
     </div>
