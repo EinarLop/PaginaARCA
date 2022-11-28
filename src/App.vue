@@ -1,17 +1,19 @@
 <template>
-  <div>
-    
+  <div class="Wrapper">
     <header>
-      <img class="logo" src="https://www.coca-colaentuhogar.com/static/version1666879807/frontend/FortyFour/mx-cceth/es_MX/images/logo-cceth-stack.svg">
-      <nav>
+      <img
+        class="Logo"
+        src="https://www.coca-colaentuhogar.com/static/version1666879807/frontend/FortyFour/mx-cceth/es_MX/images/logo-cceth-stack.svg"
+      />
+      <nav class="NavbarWrapper">
         <ul class="nav_links">
           <li><a v-on:click="navigateTo('products')">Productos</a></li>
-          <li><a v-on:click="navigateTo('cart')">Mi Carrito</a></li>
+          <li class="LeftNavLink">
+            <a v-on:click="navigateTo('cart')">Mi Carrito</a>
+          </li>
         </ul>
       </nav>
-      
-      {{cart.length}} en tu carrito
-      
+      <p class="ProductsInCart">{{ cart.length }} productos en tu carrito</p>
     </header>
 
     <div v-if="page === 'cart'">
@@ -32,7 +34,7 @@ export default {
   data: () => {
     return {
       page: "products",
-      cart: []
+      cart: [],
     };
   },
   methods: {
@@ -44,75 +46,105 @@ export default {
     },
     navigateTo(page) {
       this.page = page;
-    }
+    },
   },
-  components: { Products, Cart }
+  components: { Products, Cart },
 };
 </script>
 
 <style>
-body{
+body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
 }
 
-li, a, button{
-  font-family: 'TCCC-UnityText','Helvetica Neue',Helvetica,Arial,sans-serif;
+.Wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li,
+button {
+  font-family: "TCCC-UnityText", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   color: #edf0f1;
 }
-
-header{
+ul {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+li {
+  width: 100%;
+}
+
+header {
+  display: flex;
+
   align-items: center;
   padding: 30px 10%;
+  flex-wrap: wrap;
+}
+.ProductsInCart {
+  width: 100%;
+  text-align: center;
 }
 
-.logo{
+.NavbarWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 25px 0;
+  text-decoration: underline;
+}
+.LeftNavLink {
+  text-align: end;
+}
+.Logo {
   cursor: pointer;
+  width: 100%;
 }
 
-.nav_links{
+.nav_links {
   list-style: none;
+  padding: 0;
 }
 
-.nav_links li{
+.nav_links li {
   display: inline-block;
-  padding: 0px 20px;
 }
 
-.nav_links li a{
+.nav_links li a {
   transition: all 0.3s ease 0s;
 }
 
-.nav_links li a:hover{
+.nav_links li a:hover {
   color: #0088a9;
 }
 
-button{
+button {
   padding: 9px 25px;
-  background-color: rgba(0,136,169,1);
+  background-color: rgba(0, 136, 169, 1);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
 
-button:hover{
-  background-color: rgba(0,136,169,0.8);
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
 }
 
-.logo{
+.logo {
   height: 50px;
 }
 /* body {
     color: #333;
-    
+
     line-height: 1.42857143;
     font-size: 1.4rem;
 }
@@ -128,4 +160,8 @@ button:hover{
   border: none;
   cursor: pointer;
 } */
+
+a {
+  color: black;
+}
 </style>

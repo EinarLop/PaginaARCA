@@ -1,4 +1,4 @@
-@import './base.css';
+@import "./base.css";
 
 #app {
   max-width: 1500px;
@@ -10,11 +10,11 @@
 
 a,
 .green {
-  font-family: 'TCCC-UnityText','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: "TCCC-UnityText", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  color: #edf0f1;
+
   text-decoration: none;
   transition: 0.4s;
 }
