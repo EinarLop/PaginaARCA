@@ -29,6 +29,7 @@
 <script>
 import Products from "./components/Products.vue";
 import Cart from "./components/Cart.vue";
+
 export default {
   name: "App",
   data: () => {
@@ -46,6 +47,9 @@ export default {
     },
     navigateTo(page) {
       this.page = page;
+    },
+    completePurchase() {
+      console.log(this.cart);
     },
   },
   components: { Products, Cart },
