@@ -38,16 +38,17 @@
 
 <script>
 import axios from "axios";
+import * as dotenv from "dotenv";
 
 export default {
-  props: ["cart"],
+  props: ["cart", "CartUrl"],
   methods: {
     removeItemFromCart(product) {
       this.$emit("removeItemFromCart", product);
     },
     async completePurchase() {
       try {
-        await axios.post("team1test.azurewebsites.net/getItems", {
+        await axios.post("http://localhost:3000/getItems", {
           id: window.location.href.split("=")[1],
           data: this.cart.map(({ image, ...keepAttrs }) => keepAttrs),
         });

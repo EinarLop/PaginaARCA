@@ -56,6 +56,7 @@ export default {
     return {
       page: "products",
       cart: [],
+      CartUrl: "",
     };
   },
   methods: {
