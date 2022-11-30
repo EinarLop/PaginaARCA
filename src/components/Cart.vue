@@ -48,7 +48,7 @@ export default {
     },
     async completePurchase() {
       try {
-        await axios.post("http://localhost:3000/getItems", {
+        await axios.post("https://team1test.azurewebsites.net/getItems", {
           id: window.location.href.split("=")[1],
           data: this.cart.map(({ image, ...keepAttrs }) => keepAttrs),
         });
