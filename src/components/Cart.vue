@@ -47,13 +47,10 @@ export default {
     },
     async completePurchase() {
       try {
-        await axios.post(
-          "https://4f2a-2601-647-5901-6cc0-2d63-b5ed-ad4-a9e2.ngrok.io/getItems",
-          {
-            id: window.location.href.split("=")[1],
-            data: this.cart.map(({ image, ...keepAttrs }) => keepAttrs),
-          }
-        );
+        await axios.post("team1test.azurewebsites.net/getItems", {
+          id: window.location.href.split("=")[1],
+          data: this.cart.map(({ image, ...keepAttrs }) => keepAttrs),
+        });
       } catch (error) {
         console.log(error);
       }
