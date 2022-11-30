@@ -16,6 +16,25 @@
       <p class="ProductsInCart">{{ cart.length }} productos en tu carrito</p>
     </header>
 
+    <div class="IconsWrapper">
+      <img
+        class="ItemIcon"
+        src="https://www.coca-colaentuhogar.com/media//brands/brand/coca%20cola.svg"
+      />
+      <img
+        class="ItemIcon"
+        src="https://www.coca-colaentuhogar.com/media//brands/brand/ciel%20exprim.svg"
+      />
+      <img
+        class="ItemIcon"
+        src="https://www.coca-colaentuhogar.com/media//brands/brand/fanta.svg"
+      />
+      <img
+        class="ItemIcon"
+        src="https://www.coca-colaentuhogar.com/media//brands/brand/fuze%20tea.svg"
+      />
+    </div>
+
     <div v-if="page === 'cart'">
       <Cart v-on:removeItemFromCart="removeItemFromCart" :cart="cart" />
     </div>
@@ -29,6 +48,7 @@
 <script>
 import Products from "./components/Products.vue";
 import Cart from "./components/Cart.vue";
+import swal from "sweetalert";
 
 export default {
   name: "App",
@@ -41,9 +61,11 @@ export default {
   methods: {
     addItemToCart(product) {
       this.cart.push(product);
+      swal("Producto agregado al carrito", "", "success");
     },
     removeItemFromCart(product) {
       this.cart.splice(this.cart.indexOf(product), 1);
+      swal("Producto eliminado del carrito", "", "error");
     },
     navigateTo(page) {
       this.page = page;
@@ -57,6 +79,17 @@ export default {
 </script>
 
 <style>
+.IconsWrapper {
+  width: 100%;
+  display: flex;
+  gap: 25px;
+  overflow-x: scroll;
+  margin-bottom: 25px;
+}
+.ItemIcon {
+  width: 75px;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;

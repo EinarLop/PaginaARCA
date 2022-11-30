@@ -44,6 +44,24 @@ export default {
           image:
             "https://www.coca-colaentuhogar.com/media/catalog/product/4/5/45_ciel-exprim-jamaica-reposada-1.5-l-botella-pet_5.jpg?optimize=medium&fit=bounds&height=175&width=175&canvas=175:175",
         },
+        {
+          name: "Refresco Coca-Cola 450 ml",
+          cost: "$95.00",
+          image:
+            "https://www.coca-colaentuhogar.com/media/catalog/product/c/c/ccoma_450ml_pnr_1000x1000.jpg?optimize=medium&fit=bounds&height=175&width=175&canvas=175:175",
+        },
+        {
+          name: "Té Negro Fuze Tea Sabor Limón 600 ml",
+          cost: "$95.00",
+          image:
+            "https://www.coca-colaentuhogar.com/media/catalog/product/4/6/461_fuze-tea-te-negro-con-limon-600-ml-botella-pet_2.jpg?optimize=medium&fit=bounds&height=175&width=175&canvas=175:175",
+        },
+        {
+          name: "Fanta Naranja 355 ml",
+          cost: "$95.00",
+          image:
+            "https://www.coca-colaentuhogar.com/media/catalog/product/1/6/162257.png?optimize=medium&fit=bounds&height=175&width=175&canvas=175:175",
+        },
       ],
     };
   },
