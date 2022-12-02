@@ -52,6 +52,7 @@ export default {
           id: window.location.href.split("=")[1],
           data: this.cart.map(({ image, ...keepAttrs }) => keepAttrs),
         });
+        swal("Articulos registrados", "Por favor volver a WhatsApp", "success");
       } catch (error) {
         console.log(error);
       }
