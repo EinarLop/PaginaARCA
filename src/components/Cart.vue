@@ -16,7 +16,7 @@
 
 <template>
   <div>
-    <h1 class="ProductsTitle">Productos</h1>
+    <h1 class="ProductsTitle">Carrito</h1>
     <div>
       <div class="ItemWrapper" v-for="(product, index) in cart" :key="index">
         <div class="Item">
